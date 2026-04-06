@@ -1,86 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Banner Preview</title>
-  <link rel="stylesheet" href="bc-styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banner Gallery</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-  <h1>Banner Preview</h1>
-  <p class="subtitle">Select year and month to filter banners</p>
 
-  <div class="form-row">
-    <div class="form-group">
-      <label for="year">Year</label>
-      <select id="year">
-        <option value="">All years</option>
-        <option value="2023">2023</option>
-        <option value="2024">2024</option>
-		<option value="2025">2025</option>
-        <option value="2026">2026</option>  
-      </select>
-    </div>
+<header>
+  <h1>Banner Gallery</h1>
+</header>
 
-    <div class="form-group">
-      <label for="month">Month</label>
-      <select id="month">
-        <option value="">All months</option>
-        <option value="01">January</option>
-        <option value="02">February</option>
-        <option value="03">March</option>
-        <option value="04">April</option>
-        <option value="05">May</option>
-        <option value="06">June</option>
-        <option value="07">July</option>
-        <option value="08">August</option>
-        <option value="09">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>  
-      </select>
-    </div>
-  </div>
+<!-- Mini form -->
+<form id="filterForm">
+  <label for="year">Year:</label>
+  <select id="year">
+    <option value="2023">2023</option>
+    <option value="2024">2024</option>
+    <option value="2025">2025</option>
+    <option value="2026">2026</option>
+  </select>
 
-  <!-- Banner grid -->
-  <div class="grid" id="bannerGrid"></div>
+  <label for="month">Month:</label>
+  <select id="month">
+    <option value="01">January</option>
+    <option value="02">February</option>
+    <option value="03">March</option>
+    <option value="04">April</option>
+    <option value="05">May</option>
+    <option value="06">June</option>
+    <option value="07">July</option>
+    <option value="08">August</option>
+    <option value="09">September</option>
+    <option value="10">October</option>
+    <option value="11">November</option>
+    <option value="12">December</option>
+  </select>
+</form>
+
+<!-- Gallery -->
+<div class="gallery" id="bannerGrid"></div>
+
+<!-- Zoom modal -->
+<div class="modal" id="bannerModal">
+  <span class="modal-close">&times;</span>
+  <img id="bannerImage" src="">
 </div>
 
-<!-- Floating tribute icon -->
-<div id="banner-icon" title="Open Tribute"></div>
+<!-- Floating icon (image) -->
+<img src="Library/jovs-icon.png" alt="Contributors" class="floating-icon" id="banner-icon">
 
-<!-- Banner modal -->
-<div id="bannerModal" class="modal">
-  <span class="modal-close">×</span>
-  <div class="modal-content">
-    <img id="modalImage" src="" alt="Enlarged banner">
-  </div>
-</div>
-
-<!-- Tribute message modal with overlay -->
-<div id="overlay"></div>
-<div id="banner-message">
-  <span class="close-btn">&times;</span>
-  <h2>Our Banner Journey</h2>
+<!-- Contributors popup -->
+<div class="contributors-modal" id="banner-message">
+  <div class="contributors-content">
+    <span class="close-btn">✖</span>
+   <h2>Our Banner Journey</h2>
   <p>
     This collection of banners is more than just design work — it’s a story of dedication, creativity, and teamwork. 
     From 2023 to 2026, our web team poured their talent and heart into every detail, shaping something truly special together. 
     Each banner reflects not only skill but also the spirit of collaboration that carried us through. 
     Thank you to everyone who contributed — your effort, passion, and unity made this compilation possible. 
     It stands as a warm reminder of what we can achieve when we create as one team.
-  </p>
-  <div class="contributors">
-    <div class="scroll-track">
-      <span>Joshmark</span><span>Bem</span><span>Cynth</span><span>Mon</span>
-      <span>PJ</span><span>Maris</span><span>Jovs</span><span>Saivan</span>
-      <span>Jhonie</span><span>Alyanna</span><span>Jessa</span>
-      <span>Rave</span><span>Ivan</span><span>Jam</span>
-      <span>Book</span><span>Justine</span><span>Paulo</span>
-      <span>Eman</span><span>Paoline</span><span>Dan</span>
+  </p>  
+    <div class="scrolling-names">
+      <span>Joshmark • Bem • Cynth • Mon • PJ • Maris • Jovs • Saivan • Jhonie • Alyanna • Jessa • Rave • Ivan • Jam • Eman • Justine • Pao • Dan • Pauline • Carlo</span>
     </div>
   </div>
 </div>
-<script src="bc-script.js"></script>
+
+<script src="script.js"></script>
 </body>
 </html>
